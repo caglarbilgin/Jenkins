@@ -7,9 +7,7 @@ node{
     def mvnHome = tool name: 'maven_3_6_0' , type: 'maven'
     sh "${mvnHome}/bin/mvn package"
   }
-   stage('Test') {
-        steps {
-            sh 'run tests here if you like ...'
-        }
-   }
+   stage('Publish test results') {
+      junit '**/test-results/test/*.xml'
+  }
 }
