@@ -8,6 +8,10 @@ node{
     sh "${mvnHome}/bin/mvn package"
   }
    stage('Publish test results') {
-      junit '**/test-results/test/*.xml'
+     steps{
+       withMaven(maven : 'maven_3_6_0'){
+         sh 'mvn test'
+       }
+     }
   }
 }
