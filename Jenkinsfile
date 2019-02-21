@@ -12,4 +12,5 @@ node{
             sh 'build here...'
             sh 'run tests here if you like ...'
         }
+   }
 }
