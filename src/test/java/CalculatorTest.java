@@ -1,8 +1,8 @@
 
 import junit.framework.Assert;
 import org.junit.Test;
-public class CalculatorTest {
 
+public class CalculatorTest {
     @Test
     public void testSum() {
         // Given
@@ -13,6 +13,12 @@ public class CalculatorTest {
         if (result != 4) {   // if 2 + 2 != 4
             Assert.fail();
         }
+    }
+
+    @Test
+    public void testMinus() {
+        Calculator calculator = new Calculator();
+        Assert.assertEquals(0, calculator.minus(2, 2));
     }
 
     @Test
